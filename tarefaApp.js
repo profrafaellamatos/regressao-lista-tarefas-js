@@ -16,6 +16,13 @@ class TarefaApp {
           console.log(`ID: ${tarefa.id}, Descrição: ${tarefa.descricao}, Status: ${tarefa.finalizada ? 'Concluída' : 'Pendente'}`);
         });
     }
+
+    finalizarTarefa(tarefaId) {
+        const tarefa = this.tarefas.find(tarefa => tarefa.id === tarefaId);
+        if (tarefa) {
+            tarefa.finalizada = true;
+        }
+    }
 }
 
 module.exports = TarefaApp;
